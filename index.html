@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>igmesu | Automatización e Inteligencia Artificial para empresas</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración Tailwind Corporativa (Azul Consultoría + Tech) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#0056b3', /* Azul corporativo fuerte */
+                        secondary: '#003366', /* Azul marino oscuro */
+                        accent: '#0ea5e9', /* Azul tech claro para IA */
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .gradient-text { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white selection:bg-primary selection:text-white">
+
+    <!-- TOPBAR (Contacto directo B2B) -->
+    <div class="bg-secondary text-white text-xs py-2 px-6 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2">📍 Barcelona · Trabajamos en remoto en toda España</span>
+                <span class="flex items-center gap-2">✉️ ignamestre60@gmail.com</span>
+            </div>
+            <div class="flex gap-4 font-semibold">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-bold text-secondary flex items-center gap-2">
+                <span class="text-primary tracking-tighter">igmesu</span>
+            </div>
+            <div class="hidden lg:flex gap-6 text-sm font-medium text-gray-600">
+                <a href="#nosotros" class="hover:text-primary transition">Nosotros</a>
+                <a href="#ia" class="hover:text-primary transition">Qué Ofrecemos</a>
+                <a href="#certificaciones" class="hover:text-primary transition">Soluciones para empresas</a>
+                <a href="#ia" class="hover:text-primary transition text-accent">Automatización IA</a>
+            </div>
+            <a href="#contacto" class="bg-primary text-white text-sm font-semibold px-6 py-2.5 rounded hover:bg-secondary transition shadow-lg">Solicitar Diagnóstico</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-light overflow-hidden py-20 lg:py-32">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-3/5 reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-primary text-xs font-bold uppercase tracking-wide mb-6">
+                    Automatización inteligente para empresas
+                </div>
+                <h1 class="text-4xl lg:text-6xl font-bold text-secondary leading-tight mb-6">
+                    Digitalización y Automatización con <span class="bg-gradient-to-r from-primary to-accent gradient-text">Inteligencia Artificial</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl">
+                    Ayudamos a pequeñas y medianas empresas a ahorrar tiempo y reducir tareas manuales mediante automatizaciones, asistentes de IA e integración de herramientas.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#calculadora" class="bg-primary text-white font-semibold px-8 py-3.5 rounded hover:bg-secondary transition text-center shadow-lg shadow-blue-500/30">
+                        Evalúa tu empresa
+                    </a>
+                    <a href="#contacto" class="bg-white border-2 border-gray-200 text-gray-700 font-semibold px-8 py-3.5 rounded hover:border-primary hover:text-primary transition text-center">
+                        Contactar con un asesor
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Beneficios Hero Grid -->
+            <div class="lg:w-2/5 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal delay-200 w-full">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-primary text-2xl mb-2">📉</div>
+                    <h3 class="font-bold text-secondary">Reducir costes</h3>
+                    <p class="text-sm text-gray-500 mt-1">Y optimizar todos tus recursos actuales.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-primary text-2xl mb-2">⚡</div>
+                    <h3 class="font-bold text-secondary">Eliminar tareas</h3>
+                    <p class="text-sm text-gray-500 mt-1">Liberando tiempo de tu equipo humano.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-primary text-2xl mb-2">📊</div>
+                    <h3 class="font-bold text-secondary">Basado en Datos</h3>
+                    <p class="text-sm text-gray-500 mt-1">Decisiones reales, no intuiciones.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-primary text-2xl mb-2">🏆</div>
+                    <h3 class="font-bold text-secondary">Control total</h3>
+                    <p class="text-sm text-gray-500 mt-1">Mejora continua y experiencia del cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILARES / NOSOTROS -->
+    <section id="nosotros" class="py-16 bg-secondary text-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+            <div class="reveal">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold mb-2">Compromiso</h3>
+                <p class="text-blue-200 text-sm">Entendemos tu proceso antes de proponer una solución.</p>
+            </div>
+            <div class="reveal delay-100">
+                <div class="text-4xl mb-4">💡</div>
+                <h3 class="text-xl font-bold mb-2">Innovación</h3>
+                <p class="text-blue-200 text-sm">Creamos soluciones útiles, medibles y adaptadas a cada negocio.</p>
+            </div>
+            <div class="reveal delay-200">
+                <div class="text-4xl mb-4">📈</div>
+                <h3 class="text-xl font-bold mb-2">Enfoque práctico</h3>
+                <p class="text-blue-200 text-sm">Priorizamos casos de uso concretos, empezando por pilotos pequeños.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS: IA Y AUTOMATIZACIÓN -->
+    <section id="ia" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+            <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4">¿Qué podemos mejorar en tu empresa?</h2>
+            <p class="text-gray-600">Empezamos por las tareas que consumen tiempo, se repiten con frecuencia o generan errores.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Digitalización -->
+            <div class="bg-light p-8 rounded-2xl border border-gray-100 reveal">
+                <h3 class="text-2xl font-bold text-secondary mb-4">Digitalización de procesos</h3>
+                <p class="text-gray-600 mb-6 text-sm">Rediseñamos procesos mediante metodologías Lean Process y BPM para hacerlos más ágiles y trazables.</p>
+                <ul class="space-y-2 text-sm font-medium text-gray-700">
+                    <li class="flex items-center gap-2">✅ Digitalización del ciclo de ventas</li>
+                    <li class="flex items-center gap-2">✅ Automatización de facturación</li>
+                    <li class="flex items-center gap-2">✅ Dashboards directivos en tiempo real</li>
+                </ul>
+            </div>
+
+            <!-- Automatización -->
+            <div class="bg-light p-8 rounded-2xl border border-gray-100 reveal delay-100">
+                <h3 class="text-2xl font-bold text-secondary mb-4">Automatización de flujos</h3>
+                <p class="text-gray-600 mb-6 text-sm">Conectamos las herramientas que ya utilizas para que la información fluya automáticamente entre ellas.</p>
+                <ul class="space-y-2 text-sm font-medium text-gray-700">
+                    <li class="flex items-center gap-2">✅ Envío automático de informes</li>
+                    <li class="flex items-center gap-2">✅ Aprobación digital de compras</li>
+                    <li class="flex items-center gap-2">✅ Implementación de RPA</li>
+                </ul>
+            </div>
+
+            <!-- Inteligencia Artificial -->
+            <div class="bg-light p-8 rounded-2xl border border-gray-100 md:col-span-2 flex flex-col md:flex-row gap-8 items-center reveal">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-secondary mb-4">Inteligencia Artificial aplicada</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Anticipamos necesidades y mejoramos la toma de decisiones. Desde asistentes virtuales hasta modelos predictivos de análisis de ventas y control de calidad.</p>
+                    <ul class="space-y-2 text-sm font-medium text-gray-700">
+                        <li class="flex items-center gap-2">✅ Cuadros de mando con KPIs (BI)</li>
+                        <li class="flex items-center gap-2">✅ Análisis predictivo para mantenimiento</li>
+                    </ul>
+                </div>
+                <!-- LAB -->
+                <div class="md:w-1/2 bg-white border-2 border-accent p-6 rounded-xl shadow-lg relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-accent text-white text-[10px] font-bold px-3 py-1 uppercase rounded-bl-lg">Destacado</div>
+                    <h4 class="text-xl font-bold text-secondary mb-2 flex items-center gap-2">🔬 igmesu · Laboratorio de automatización</h4>
+                    <p class="text-gray-500 text-sm">Diseñamos y probamos una primera solución acotada para validar su utilidad antes de ampliar la implantación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METODOLOGÍA -->
+    <section class="py-20 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-secondary mb-16 reveal">Nuestra metodología de trabajo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Línea conectora (Desktop) -->
+                <div class="hidden md:block absolute top-6 left-10 right-10 h-0.5 bg-gray-300 z-0"></div>
+                
+                <div class="relative z-10 text-center reveal">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-gray-50 shadow-md">1</div>
+                    <h4 class="font-bold text-secondary mb-2">Diagnóstico</h4>
+                    <p class="text-sm text-gray-500">Analizamos el estado actual y detectamos oportunidades.</p>
+                </div>
+                <div class="relative z-10 text-center reveal delay-100">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-gray-50 shadow-md">2</div>
+                    <h4 class="font-bold text-secondary mb-2">Hoja de Ruta</h4>
+                    <p class="text-sm text-gray-500">Definimos un plan adaptado a tus objetivos.</p>
+                </div>
+                <div class="relative z-10 text-center reveal delay-200">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-gray-50 shadow-md">3</div>
+                    <h4 class="font-bold text-secondary mb-2">Implantación</h4>
+                    <p class="text-sm text-gray-500">Integramos herramientas digitales y de IA.</p>
+                </div>
+                <div class="relative z-10 text-center reveal delay-300">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-gray-50 shadow-md">4</div>
+                    <h4 class="font-bold text-secondary mb-2">Formación</h4>
+                    <p class="text-sm text-gray-500">Capacitamos al equipo y optimizamos continuamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORA DE MADUREZ DIGITAL (Interactive Tool) -->
+    <section id="calculadora" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 reveal">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-secondary mb-4">Checklist de Madurez Digital</h2>
+                <p class="text-gray-600">Evalúa en menos de un minuto el nivel de madurez digital de tu empresa.</p>
+            </div>
+
+            <div class="bg-light border border-gray-200 rounded-2xl p-8 shadow-sm">
+                <form id="calcForm" class="space-y-6">
+                    <!-- Pregunta 1 -->
+                    <div>
+                        <label class="block font-semibold text-secondary mb-2">1. Estrategia y Gobernanza Digital</label>
+                        <select class="w-full border-gray-300 rounded-md p-3 bg-white text-sm focus:ring-primary focus:border-primary border" required>
+                            <option value="0">No existe ningún plan ni responsables definidos</option>
+                            <option value="1">Hay acciones puntuales sin seguimiento</option>
+                            <option value="2">Existe un plan parcial y un responsable</option>
+                            <option value="3">Hay un plan digital completo integrado en la dirección</option>
+                        </select>
+                    </div>
+                    <!-- Pregunta 2 -->
+                    <div>
+                        <label class="block font-semibold text-secondary mb-2">2. Procesos y Automatización</label>
+                        <select class="w-full border-gray-300 rounded-md p-3 bg-white text-sm focus:ring-primary focus:border-primary border" required>
+                            <option value="0">Se usan documentos en papel</option>
+                            <option value="1">Algunos procesos están informatizados</option>
+                            <option value="2">La mayoría son digitales pero no integrados</option>
+                            <option value="3">Todos los procesos están automatizados y conectados</option>
+                        </select>
+                    </div>
+                    <!-- Pregunta 3 -->
+                    <div>
+                        <label class="block font-semibold text-secondary mb-2">3. Tecnología e Infraestructura</label>
+                        <select class="w-full border-gray-300 rounded-md p-3 bg-white text-sm focus:ring-primary focus:border-primary border" required>
+                            <option value="0">Ordenadores y software básico</option>
+                            <option value="1">Aplicaciones específicas sin conexión entre áreas</option>
+                            <option value="2">ERP o CRM parcialmente implementados</option>
+                            <option value="3">Ecosistema digital completo con datos actualizados</option>
+                        </select>
+                    </div>
+                    <!-- Pregunta 4 -->
+                    <div>
+                        <label class="block font-semibold text-secondary mb-2">4. Cultura y Competencias Digitales</label>
+                        <select class="w-full border-gray-300 rounded-md p-3 bg-white text-sm focus:ring-primary focus:border-primary border" required>
+                            <option value="0">No hay formación digital</option>
+                            <option value="1">Algunos trabajadores tienen conocimientos básicos</option>
+                            <option value="2">Hay formación periódica y participación activa</option>
+                            <option value="3">El equipo es competente y promueve la innovación</option>
+                        </select>
+                    </div>
+                    <!-- Pregunta 5 -->
+                    <div>
+                        <label class="block font-semibold text-secondary mb-2">5. Ciberseguridad y Protección de Datos</label>
+                        <select class="w-full border-gray-300 rounded-md p-3 bg-white text-sm focus:ring-primary focus:border-primary border" required>
+                            <option value="0">No existen protocolos de seguridad</option>
+                            <option value="1">Medidas básicas como antivirus y contraseñas</option>
+                            <option value="2">Copias de seguridad y formación básica</option>
+                            <option value="3">Sistema completo implantado (ISO 27001 o ENS)</option>
+                        </select>
+                    </div>
+                    <!-- Pregunta 6 -->
+                    <div>
+                        <label class="block font-semibold text-secondary mb-2">6. Análisis de Datos y Decisiones</label>
+                        <select class="w-full border-gray-300 rounded-md p-3 bg-white text-sm focus:ring-primary focus:border-primary border" required>
+                            <option value="0">No hay datos ni indicadores</option>
+                            <option value="1">Informes puntuales sin análisis profundo</option>
+                            <option value="2">Revisión de datos regular por departamentos</option>
+                            <option value="3">Decisiones basadas en datos en tiempo real (BI)</option>
+                        </select>
+                    </div>
+
+                    <button type="button" onclick="calcularResultado()" class="w-full bg-primary text-white font-bold py-4 rounded hover:bg-secondary transition mt-4">
+                        Calcular resultado
+                    </button>
+                </form>
+
+                <!-- Caja de Resultados (Oculta por defecto) -->
+                <div id="resultadoBox" class="hidden mt-8 p-6 bg-blue-50 border border-blue-200 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold text-secondary mb-2">Puntuación: <span id="puntosLabel" class="text-primary"></span>/18</h3>
+                    <p id="mensajeResultado" class="font-medium text-gray-700 mb-4"></p>
+                    <a href="#contacto" class="inline-block bg-white border border-primary text-primary font-bold px-6 py-2 rounded hover:bg-primary hover:text-white transition">Solicitar diagnóstico inicial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUCIONES -->
+    <section id="certificaciones" class="py-20 bg-secondary text-white border-t border-blue-900">
+        <div class="max-w-7xl mx-auto px-6 reveal">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl font-bold mb-4">Automatización que genera impacto</h2>
+                    <p class="text-blue-200">Diseñamos soluciones prácticas que encajan con los procesos reales de tu negocio.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-blue-900/50 p-4 border border-blue-800 rounded">⏵ Automatización de tareas administrativas</div>
+                <div class="bg-blue-900/50 p-4 border border-blue-800 rounded">⏵ Clasificación de documentos y correos</div>
+                <div class="bg-blue-900/50 p-4 border border-blue-800 rounded">⏵ Asistentes de IA para consultas frecuentes</div>
+                <div class="bg-blue-900/50 p-4 border border-blue-800 rounded">⏵ Automatización de informes y seguimiento</div>
+                <div class="bg-blue-900/50 p-4 border border-blue-800 rounded">⏵ Integración de aplicaciones y datos</div>
+                <div class="bg-blue-900/50 p-4 border border-blue-800 rounded border-accent text-accent font-bold">⏵ Diagnóstico inicial sin compromiso</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y CAPTACIÓN DE CLIENTES -->
+    <footer id="contacto" class="bg-gray-900 text-gray-400 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Contacto y captación de oportunidades -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 border-b border-gray-800 pb-12">
+                <div>
+                    <h3 class="text-white text-3xl font-bold mb-4">igmesu</h3>
+                    <p class="text-lg text-gray-300 mb-4">Menos tareas manuales. Más tiempo para hacer crecer tu negocio.</p>
+                    <p class="text-sm mb-6">Cuéntame qué proceso te gustaría mejorar y te responderé para valorar juntos si una automatización puede ayudarte.</p>
+                    <a class="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-bold px-6 py-3 rounded-lg transition" href="mailto:ignamestre60@gmail.com?subject=Consulta%20sobre%20automatizaci%C3%B3n%20con%20igmesu">✉ Escribir por email</a>
+                    <p class="text-sm mt-4"><a class="text-sky-300 hover:text-white underline" href="mailto:ignamestre60@gmail.com">ignamestre60@gmail.com</a></p>
+                    <p class="text-xs text-gray-500 mt-6">Automatización de procesos · Asistentes de IA · Integración de herramientas · Informes y datos</p>
+                </div>
+                <div class="bg-gray-800/70 border border-gray-700 rounded-2xl p-6 md:p-8">
+                    <h3 class="text-white text-xl font-bold mb-2">Solicita un diagnóstico inicial</h3>
+                    <p class="text-sm text-gray-400 mb-6">Rellena el formulario y se abrirá un correo con la información para que puedas enviármelo.</p>
+                    <form id="leadForm" class="space-y-4">
+                        <div><label for="leadName" class="block text-sm text-gray-200 mb-1">Nombre</label><input id="leadName" name="name" required class="w-full rounded-lg bg-gray-900 border border-gray-600 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Tu nombre"></div>
+                        <div><label for="leadCompany" class="block text-sm text-gray-200 mb-1">Empresa</label><input id="leadCompany" name="company" class="w-full rounded-lg bg-gray-900 border border-gray-600 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Nombre de la empresa"></div>
+                        <div><label for="leadEmail" class="block text-sm text-gray-200 mb-1">Email de contacto</label><input id="leadEmail" name="email" type="email" required class="w-full rounded-lg bg-gray-900 border border-gray-600 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="tu@empresa.com"></div>
+                        <div><label for="leadNeed" class="block text-sm text-gray-200 mb-1">¿Qué te gustaría mejorar?</label><select id="leadNeed" name="need" required class="w-full rounded-lg bg-gray-900 border border-gray-600 p-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"><option value="">Selecciona una opción</option><option>Automatizar tareas repetitivas</option><option>Procesar documentos, facturas o correos</option><option>Asistente de IA / atención al cliente</option><option>Informes, datos y dashboards</option><option>Conectar aplicaciones y herramientas</option><option>Otro proceso</option></select></div>
+                        <div><label for="leadMessage" class="block text-sm text-gray-200 mb-1">Cuéntame brevemente tu caso</label><textarea id="leadMessage" name="message" rows="3" class="w-full rounded-lg bg-gray-900 border border-gray-600 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="¿Qué tarea te quita tiempo o genera errores?"></textarea></div>
+                        <label class="flex items-start gap-2 text-xs text-gray-400"><input type="checkbox" required class="mt-1"><span>Autorizo el uso de estos datos para responder a mi consulta. No los envíes si no estás de acuerdo.</span></label>
+                        <button type="submit" class="w-full bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-5 rounded-lg transition">Solicitar diagnóstico →</button>
+                        <p class="text-xs text-gray-500">El formulario prepara un email en tu aplicación de correo; no guarda datos en esta web.</p>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center text-xs text-gray-500 pt-2">&copy; 2026 igmesu · Automatización e Inteligencia Artificial para empresas.</div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Animaciones de Scroll
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+
+        // Formulario de captación: prepara un correo al contacto de igmesu.
+        document.getElementById('leadForm')?.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const data = new FormData(this);
+            const subject = encodeURIComponent('Consulta de automatización - ' + (data.get('company') || data.get('name')));
+            const body = encodeURIComponent(
+                'Nombre: ' + data.get('name') + '\n' +
+                'Empresa: ' + (data.get('company') || 'No indicada') + '\n' +
+                'Email: ' + data.get('email') + '\n' +
+                'Necesidad: ' + data.get('need') + '\n\n' +
+                'Detalles: ' + (data.get('message') || 'No indicados')
+            );
+            window.location.href = 'mailto:ignamestre60@gmail.com?subject=' + subject + '&body=' + body;
+        });
+
+        // Lógica de la Calculadora de Madurez
+        function calcularResultado() {
+            const form = document.getElementById('calcForm');
+            const selects = form.querySelectorAll('select');
+            let total = 0;
+            let completado = true;
+
+            selects.forEach(select => {
+                if (select.value === "") completado = false;
+                total += parseInt(select.value);
+            });
+
+            const box = document.getElementById('resultadoBox');
+            const label = document.getElementById('puntosLabel');
+            const msg = document.getElementById('mensajeResultado');
+
+            label.innerText = total;
+
+            if (total <= 6) {
+                msg.innerText = "Nivel Inicial. Tu empresa necesita un plan de digitalización urgente para no perder competitividad. ¡Estamos aquí para ayudarte!";
+            } else if (total <= 12) {
+                msg.innerText = "Nivel Intermedio. Tienes una buena base, pero existen cuellos de botella. Es el momento perfecto para automatizar flujos e integrar IA.";
+            } else {
+                msg.innerText = "Nivel Avanzado. ¡Excelente! Tu empresa está digitalizada. El siguiente paso es exprimir la Inteligencia Artificial Predictiva y el Business Intelligence.";
+            }
+
+            box.classList.remove('hidden');
+            
+            // Auto scroll al resultado
+            box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
