@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>igmesu | Automatización e Inteligencia Artificial para empresas</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración Tailwind Corporativa (Azul Consultoría + Tech) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#0056b3', /* Azul corporativo fuerte */
+                        secondary: '#003366', /* Azul marino oscuro */
+                        accent: '#0ea5e9', /* Azul tech claro para IA */
+                        light: '#f8fafb'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .gradient-text { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white selection:bg-primary selection:text-white">
+
+    <!-- TOPBAR (Contacto directo B2B) -->
+    <div class="bg-secondary text-white text-xs py-2 px-6 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2">📍 Barcelona · Trabajamos en remoto en toda España</span>
+                <span class="flex items-center gap-2">✉️ ignamestre60@gmail.com</span>
+            </div>
+            <div class="flex gap-4 font-semibold">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-bold text-secondary flex items-center gap-2">
+                <span class="text-primary tracking-tighter">igmesu</span>
+            </div>
+            <div class="hidden lg:flex gap-6 text-sm font-medium text-gray-600">
+                <a href="#soluciones" class="hover:text-primary transition">Soluciones</a>
+                <a href="#como-trabajamos" class="hover:text-primary transition">Cómo trabajamos</a>
+                <a href="#ejemplos" class="hover:text-primary transition">Ejemplos</a>
+                <a href="#nosotros" class="hover:text-primary transition">Sobre IGMESU</a>
+            </div>
+            <a href="#contacto" class="bg-primary text-white text-sm font-semibold px-6 py-2.5 rounded hover:bg-secondary transition shadow-lg">Hablemos</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-light overflow-hidden py-20 lg:py-32">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-3/5 reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-primary text-xs font-bold uppercase tracking-wide mb-6">
+                    Automatización inteligente para empresas
+                </div>
+                <h1 class="text-4xl lg:text-6xl font-bold text-secondary leading-tight mb-6">
+                    Menos trabajo manual. <span class="bg-gradient-to-r from-primary to-accent gradient-text">Más tiempo para tu negocio.</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl">
+                    En IGMESU analizamos tus procesos e implementamos automatizaciones e inteligencia artificial para simplificar tareas repetitivas, conectar herramientas y ayudar a tu equipo a trabajar mejor.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contacto" class="bg-primary text-white font-semibold px-8 py-3.5 rounded hover:bg-secondary transition text-center shadow-lg shadow-blue-500/30">
+                        Cuéntanos tu proceso
+                    </a>
+                    <a href="#contacto" class="bg-white border-2 border-gray-200 text-gray-700 font-semibold px-8 py-3.5 rounded hover:border-primary hover:text-primary transition text-center">
+                        Contactar con un asesor
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Beneficios Hero Grid -->
+            <div class="lg:w-2/5 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal w-full">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-primary text-2xl mb-2">💰</div>
+                    <h3 class="font-bold text-secondary">Reducir costes</h3>
+                    <p class="text-sm text-gray-500 mt-1">Y optimizar todos tus recursos actuales.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-primary text-2xl mb-2">⚙️</div>
+                    <h3 class="font-bold text-secondary">Eliminar tareas</h3>
+                    <p class="text-sm text-gray-500 mt-1">Liberando tiempo de tu equipo humano.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-primary text-2xl mb-2">📊</div>
+                    <h3 class="font-bold text-secondary">Basado en Datos</h3>
+                    <p class="text-sm text-gray-500 mt-1">Decisiones reales, no intuiciones.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="text-primary text-2xl mb-2">🎮</div>
+                    <h3 class="font-bold text-secondary">Control total</h3>
+                    <p class="text-sm text-gray-500 mt-1">Mejora continua y experiencia del cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILARES / NOSOTROS -->
+    <section id="nosotros" class="py-16 bg-secondary text-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+            <div class="reveal">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold mb-2">Compromiso</h3>
+                <p class="text-blue-200 text-sm">Entendemos tu proceso antes de proponer una solución.</p>
+            </div>
+            <div class="reveal delay-100">
+                <div class="text-4xl mb-4">💡</div>
+                <h3 class="text-xl font-bold mb-2">Innovación</h3>
+                <p class="text-blue-200 text-sm">Creamos soluciones útiles, medibles y adaptadas a cada negocio.</p>
+            </div>
+            <div class="reveal delay-200">
+                <div class="text-4xl mb-4">🎯</div>
+                <h3 class="text-xl font-bold mb-2">Enfoque práctico</h3>
+                <p class="text-blue-200 text-sm">Priorizamos casos de uso concretos, empezando por pilotos pequeños.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS: AUTOMATIZACIÓN E IA -->
+    <section id="soluciones" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+            <h2 class="text-3xl lg:text-4xl font-bold text-secondary mb-4">Soluciones para quitar trabajo manual de tu día a día</h2>
+            <p class="text-gray-600">Diseñamos e implementamos soluciones prácticas según las necesidades de cada empresa. Empezamos por un proceso concreto y ampliamos cuando aporta valor.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-light p-8 rounded-2xl border border-gray-100 reveal">
+                <div class="text-3xl mb-4">🌐</div>
+                <h3 class="text-xl font-bold text-secondary mb-3">Creación y mejora de páginas web</h3>
+                <p class="text-gray-600 mb-4 text-sm">Páginas web claras, modernas y pensadas para convertir visitas en consultas comerciales.</p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li>✓ Creación o actualización de webs corporativas</li>
+                    <li>✓ Formularios de contacto y captación de leads</li>
+                    <li>✓ Integración con calendarios, CRM y automatizaciones</li>
+                </ul>
+            </div>
+            <div class="bg-light p-8 rounded-2xl border border-gray-100 reveal delay-100">
+                <div class="text-3xl mb-4">💬</div>
+                <h3 class="text-xl font-bold text-secondary mb-3">Atención al cliente con IA</h3>
+                <p class="text-gray-600 mb-4 text-sm">Asistentes para atender consultas frecuentes, recoger solicitudes y dirigir cada caso al lugar adecuado.</p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li>✓ Asistentes para web y canales de mensajería compatibles</li>
+                    <li>✓ Respuestas basadas en información de la empresa</li>
+                    <li>✓ Derivación a una persona cuando sea necesario</li>
+                </ul>
+            </div>
+            <div class="bg-light p-8 rounded-2xl border border-gray-100 reveal delay-200">
+                <div class="text-3xl mb-4">📨</div>
+                <h3 class="text-xl font-bold text-secondary mb-3">Gestión inteligente de correos</h3>
+                <p class="text-gray-600 mb-4 text-sm">Automatizamos tareas de la bandeja de entrada para que los mensajes no dependan de una revisión manual constante.</p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li>✓ Clasificación por tema, urgencia o responsable</li>
+                    <li>✓ Extracción de datos y preparación de borradores</li>
+                    <li>✓ Avisos, asignaciones y seguimiento de solicitudes</li>
+                </ul>
+            </div>
+            <div class="bg-light p-8 rounded-2xl border border-gray-100 reveal">
+                <div class="text-3xl mb-4">📄</div>
+                <h3 class="text-xl font-bold text-secondary mb-3">Documentos y facturas</h3>
+                <p class="text-gray-600 mb-4 text-sm">Convertimos documentos y datos dispersos en información organizada, revisable y lista para utilizar.</p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li>✓ Extracción de datos de facturas y albaranes</li>
+                    <li>✓ Clasificación y archivo de documentos</li>
+                    <li>✓ Preparación de datos para revisión o registro</li>
+                </ul>
+            </div>
+            <div class="bg-light p-8 rounded-2xl border border-gray-100 reveal delay-100">
+                <div class="text-3xl mb-4">🔄</div>
+                <h3 class="text-xl font-bold text-secondary mb-3">Automatización de procesos</h3>
+                <p class="text-gray-600 mb-4 text-sm">Conectamos las aplicaciones que ya utilizas para evitar copiar datos y repetir los mismos pasos.</p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li>✓ Integración de formularios, hojas de cálculo y CRM</li>
+                    <li>✓ Avisos, aprobaciones y tareas de seguimiento</li>
+                    <li>✓ Traspaso de información entre herramientas</li>
+                </ul>
+            </div>
+            <div class="bg-light p-8 rounded-2xl border border-gray-100 reveal delay-200">
+                <div class="text-3xl mb-4">📊</div>
+                <h3 class="text-xl font-bold text-secondary mb-3">Informes y operaciones</h3>
+                <p class="text-gray-600 mb-4 text-sm">Simplificamos la preparación de informes y la revisión de datos operativos y comerciales.</p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li>✓ Informes periódicos automáticos</li>
+                    <li>✓ Comparación de archivos y detección de variaciones</li>
+                    <li>✓ Alertas sobre datos que requieren revisión</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- METODOLOGÍA -->
+    <section id="como-trabajamos" class="py-20 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-secondary mb-16 reveal">Nuestra metodología de trabajo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Línea conectora (Desktop) -->
+                <div class="hidden md:block absolute top-6 left-10 right-10 h-0.5 bg-gray-300 z-0"></div>
+                
+                <div class="relative z-10 text-center reveal">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-gray-50 shadow-md">1</div>
+                    <h4 class="font-bold text-secondary mb-2">Diagnóstico</h4>
+                    <p class="text-sm text-gray-500">Analizamos el estado actual y detectamos oportunidades.</p>
+                </div>
+                <div class="relative z-10 text-center reveal delay-100">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-gray-50 shadow-md">2</div>
+                    <h4 class="font-bold text-secondary mb-2">Hoja de Ruta</h4>
+                    <p class="text-sm text-gray-500">Definimos un plan adaptado a tus objetivos.</p>
+                </div>
+                <div class="relative z-10 text-center reveal delay-200">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-gray-50 shadow-md">3</div>
+                    <h4 class="font-bold text-secondary mb-2">Implantación</h4>
+                    <p class="text-sm text-gray-500">Integramos herramientas digitales y de IA.</p>
+                </div>
+                <div class="relative z-10 text-center reveal delay-300">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-gray-50 shadow-md">4</div>
+                    <h4 class="font-bold text-secondary mb-2">Formación</h4>
+                    <p class="text-sm text-gray-500">Capacitamos al equipo y optimizamos continuamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EJEMPLOS DE APLICACIÓN -->
+    <section id="ejemplos" class="py-20 bg-secondary text-white border-t border-blue-900">
+        <div class="max-w-7xl mx-auto px-6 reveal">
+            <div class="max-w-3xl mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Ejemplos de procesos que podemos mejorar</h2>
+                <p class="text-blue-200">Cada empresa es diferente. Estos son algunos ejemplos de cómo se puede aplicar la automatización y la IA a tareas cotidianas.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="bg-blue-900/50 p-6 border border-blue-800 rounded-xl">
+                    <p class="text-sky-300 text-sm font-semibold mb-2">01 · Administración</p>
+                    <h3 class="font-bold text-lg mb-2">De factura recibida a registro preparado</h3>
+                    <p class="text-blue-100 text-sm">La automatización recoge la factura, extrae los campos relevantes y prepara la información para que una persona la revise antes de registrarla.</p>
+                </div>
+                <div class="bg-blue-900/50 p-6 border border-blue-800 rounded-xl">
+                    <p class="text-sky-300 text-sm font-semibold mb-2">02 · Atención al cliente</p>
+                    <h3 class="font-bold text-lg mb-2">De consulta a solicitud organizada</h3>
+                    <p class="text-blue-100 text-sm">Un asistente responde preguntas habituales, recoge los datos necesarios y deriva los casos complejos al equipo.</p>
+                </div>
+                <div class="bg-blue-900/50 p-6 border border-blue-800 rounded-xl">
+                    <p class="text-sky-300 text-sm font-semibold mb-2">03 · Gestión de correos</p>
+                    <h3 class="font-bold text-lg mb-2">De bandeja de entrada a tareas claras</h3>
+                    <p class="text-blue-100 text-sm">Los correos se clasifican, se identifican las solicitudes y se preparan respuestas o tareas para revisión.</p>
+                </div>
+                <div class="bg-blue-900/50 p-6 border border-blue-800 rounded-xl">
+                    <p class="text-sky-300 text-sm font-semibold mb-2">04 · Datos e informes</p>
+                    <h3 class="font-bold text-lg mb-2">De varios archivos a un informe semanal</h3>
+                    <p class="text-blue-100 text-sm">Se combinan datos, se comparan periodos y se señalan variaciones que requieren atención.</p>
+                </div>
+                <div class="bg-blue-900/50 p-6 border border-blue-800 rounded-xl">
+                    <p class="text-sky-300 text-sm font-semibold mb-2">05 · Ventas</p>
+                    <h3 class="font-bold text-lg mb-2">De nuevo contacto a seguimiento</h3>
+                    <p class="text-blue-100 text-sm">Los nuevos contactos se guardan en el CRM, se asignan y generan recordatorios para que ninguna oportunidad se quede olvidada.</p>
+                </div>
+                <div class="bg-blue-900/50 p-6 border border-blue-800 rounded-xl">
+                    <p class="text-sky-300 text-sm font-semibold mb-2">06 · Web</p>
+                    <h3 class="font-bold text-lg mb-2">De formulario a proceso conectado</h3>
+                    <p class="text-blue-100 text-sm">Una consulta recibida desde la web puede crear un registro, avisar al responsable y activar el siguiente paso del proceso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPUESTA DE VALOR -->
+    <section id="nosotros" class="py-16 bg-light border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="reveal">
+                <h3 class="text-lg font-bold text-secondary mb-2">Primero, entender el proceso</h3>
+                <p class="text-sm text-gray-600">Analizamos cómo se trabaja hoy antes de proponer una solución.</p>
+            </div>
+            <div class="reveal delay-100">
+                <h3 class="text-lg font-bold text-secondary mb-2">Empezar por algo concreto</h3>
+                <p class="text-sm text-gray-600">Priorizamos mejoras acotadas que se puedan probar y evaluar sin transformar toda la empresa de golpe.</p>
+            </div>
+            <div class="reveal delay-200">
+                <h3 class="text-lg font-bold text-secondary mb-2">Con las herramientas existentes</h3>
+                <p class="text-sm text-gray-600">Cuando es viable, aprovechamos los sistemas que ya utiliza tu equipo y los conectamos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y CAPTACIÓN DE CLIENTES -->
+    <footer id="contacto" class="bg-gray-900 text-gray-400 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Contacto y captación de oportunidades -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 border-b border-gray-800 pb-12">
+                <div>
+                    <h3 class="text-white text-3xl font-bold mb-4">igmesu</h3>
+                    <p class="text-lg text-gray-300 mb-4">Menos tareas manuales. Más tiempo para hacer crecer tu negocio.</p>
+                    <p class="text-sm mb-6">Cuéntame qué proceso te gustaría mejorar y te responderé para valorar juntos si una automatización puede ayudarte.</p>
+                    <a class="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-bold px-6 py-3 rounded-lg transition" href="mailto:ignamestre60@gmail.com?subject=Consulta%20sobre%20automatización%20con%20igmesu">📧 Escribir por email</a>
+                    <p class="text-sm mt-4"><a class="text-sky-300 hover:text-white underline" href="mailto:ignamestre60@gmail.com">ignamestre60@gmail.com</a></p>
+                    <p class="text-xs text-gray-500 mt-6">Automatización de procesos · Implementación de IA · Integración de herramientas · Webs y asistentes</p>
+                </div>
+                <div class="bg-gray-800/70 border border-gray-700 rounded-2xl p-6 md:p-8">
+                    <h3 class="text-white text-xl font-bold mb-2">Cuéntanos qué quieres mejorar</h3>
+                    <p class="text-sm text-gray-400 mb-6">Cuéntanos brevemente qué tarea te gustaría simplificar. Se abrirá un correo preparado para que puedas enviarnos tu consulta.</p>
+                    <form id="leadForm" class="space-y-4">
+                        <div><label for="leadName" class="block text-sm text-gray-200 mb-1">Nombre</label><input id="leadName" name="name" required class="w-full rounded-lg bg-gray-900 border border-gray-600 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Tu nombre"></div>
+                        <div><label for="leadCompany" class="block text-sm text-gray-200 mb-1">Empresa</label><input id="leadCompany" name="company" class="w-full rounded-lg bg-gray-900 border border-gray-600 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Nombre de la empresa"></div>
+                        <div><label for="leadEmail" class="block text-sm text-gray-200 mb-1">Email de contacto</label><input id="leadEmail" name="email" type="email" required class="w-full rounded-lg bg-gray-900 border border-gray-600 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="tu@empresa.com"></div>
+                        <div><label for="leadNeed" class="block text-sm text-gray-200 mb-1">¿Qué te gustaría mejorar?</label><select id="leadNeed" name="need" required class="w-full rounded-lg bg-gray-900 border border-gray-600 p-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500"><option value="">Selecciona una opción</option><option>Automatizar tareas repetitivas</option><option>Procesar documentos, facturas o correos</option><option>Asistente de IA / atención al cliente</option><option>Informes, datos y dashboards</option><option>Conectar aplicaciones y herramientas</option><option>Otro proceso</option></select></div>
+                        <div><label for="leadMessage" class="block text-sm text-gray-200 mb-1">Cuéntame brevemente tu caso</label><textarea id="leadMessage" name="message" rows="3" class="w-full rounded-lg bg-gray-900 border border-gray-600 p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="¿Qué tarea te quita tiempo o genera errores?"></textarea></div>
+                        <label class="flex items-start gap-2 text-xs text-gray-400"><input type="checkbox" required class="mt-1"><span>Autorizo el uso de estos datos para responder a mi consulta. No los envíes si no estás de acuerdo.</span></label>
+                        <button type="submit" class="w-full bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-5 rounded-lg transition">Solicitar diagnóstico 📧</button>
+                        <p class="text-xs text-gray-500">El formulario prepara un correo en tu aplicación de correo; no guarda datos en esta web.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Observador de elementos para animaciones reveal
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observador.observe(el));
+
+        // Manejo del formulario de lead
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('leadName').value;
+            const empresa = document.getElementById('leadCompany').value;
+            const email = document.getElementById('leadEmail').value;
+            const necesidad = document.getElementById('leadNeed').value;
+            const mensaje = document.getElementById('leadMessage').value;
+
+            const asunto = encodeURIComponent('Consulta sobre automatización con igmesu');
+            const cuerpo = encodeURIComponent(
+                `Nombre: ${nombre}\nEmpresa: ${empresa}\nEmail: ${email}\n\n¿Qué te gustaría mejorar?: ${necesidad}\n\nDetalles:\n${mensaje}`
+            );
+
+            window.location.href = `mailto:ignamestre60@gmail.com?subject=${asunto}&body=${cuerpo}`;
+        });
+    </script>
+</body>
+</html>
